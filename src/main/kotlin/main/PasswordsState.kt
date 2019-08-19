@@ -1,5 +1,6 @@
+package main
+
 import io.kweb.shoebox.Shoebox
-import io.kweb.shoebox.View
 import java.nio.file.Files
 import java.nio.file.Path
 

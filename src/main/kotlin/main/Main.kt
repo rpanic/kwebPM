@@ -1,3 +1,5 @@
+package main
+
 import io.kweb.Kweb
 import io.kweb.dom.BodyElement
 import io.kweb.dom.element.Element

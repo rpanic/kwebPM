@@ -1,7 +1,7 @@
-import com.mobapphome.simpleencryptorlib.SimpleEncryptor
+package main
+
 import java.util.*
 import javax.crypto.Cipher
-import javax.crypto.spec.IvParameterSpec
 import javax.crypto.spec.SecretKeySpec
 
 class Encryption (val key: String) {
