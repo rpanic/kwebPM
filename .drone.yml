@@ -11,5 +11,6 @@ steps:
   commands:
   - docker build -t kwebpm .
   - docker stop kwebpm || true
+  - docker rm kwebpm || true
   - docker volume create kwebpmvolume || true
   - docker run -d --name kwebpm -v kwebpmvolume:/app/data -p 90:90 kwebpm
