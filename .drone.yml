@@ -9,7 +9,11 @@ platform:
 steps:
 - name: greeting
   commands:
-  - docker build -t $DRONE_REPO_NAME .
-  - docker stop $DRONE_REPO_NAME
-  - docker volume create $DRONE_REPO_NAME
-  - docker run --name $DRONE_REPO_NAME -v $DRONE_REPO_NAME:/app/data -p 90:90 $DRONE_REPO_NAME
+  - docker build -t $IMAGE_NAME .
+  - docker stop $IMAGE_NAME
+  - docker volume create $VOLUME_NAME
+  - docker run --name $IMAGE_NAME -v $VOLUME_NAME:/app/data -p $PORT $IMAGE_NAME
+  enviroment:
+    IMAGE_NAME: kwebpm
+    VOLUME_NAME: kwebpmvolume
+    PORT: 90:90
