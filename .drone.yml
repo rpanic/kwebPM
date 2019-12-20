@@ -7,10 +7,18 @@ platform:
   arch: amd64
 
 steps:
-- name: build and publish
+- name: build
   commands:
   - docker build -t kwebpm .
+- name: cleanup
+  commands:
   - docker stop kwebpm || true
   - docker rm kwebpm || true
+- name: deploy
+  commands:
   - docker volume create kwebpmvolume || true
   - docker run -d --name kwebpm -v kwebpmvolume:/app/data -p 90:90 kwebpm
+  
+trigger:
+  branch:
+  - master
