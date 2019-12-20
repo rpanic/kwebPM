@@ -1,7 +1,6 @@
 package main
 
 import io.kweb.Kweb
-import io.kweb.dom.BodyElement
 import io.kweb.dom.element.Element
 import io.kweb.dom.element.creation.ElementCreator
 import io.kweb.dom.element.creation.tags.*
@@ -15,7 +14,6 @@ import io.kweb.state.render.render
 import io.kweb.state.render.renderEach
 import java.nio.file.Paths
 import kotlin.random.Random
-import PasswordsState.Password
 import io.kweb.WebBrowser
 import io.kweb.shoebox.KeyValue
 import io.kweb.shoebox.Source
