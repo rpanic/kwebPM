@@ -9,11 +9,7 @@ platform:
 steps:
 - name: greeting
   commands:
-  - docker build -t $IMAGE_NAME .
-  - docker stop $IMAGE_NAME
-  - docker volume create $VOLUME_NAME
-  - docker run --name $IMAGE_NAME -v $VOLUME_NAME:/app/data -p $PORT $IMAGE_NAME
-  enviroment:
-    IMAGE_NAME: kwebpm
-    VOLUME_NAME: kwebpmvolume
-    PORT: 90:90
+  - docker build -t kwebpm .
+  - docker stop kwebpm
+  - docker volume create kwebpmvolume
+  - docker run --name kwebpm -v kwebpmvolume:/app/data -p 90:90 kwebpm
