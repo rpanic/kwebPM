@@ -35,7 +35,7 @@ fun main(args: Array<String>) {
         
         var search = KVar("")
         
-        val map = mutableMapOf<String, UserCredentials>("test4" to UserCredentials("test4", "test"))
+        val map = mutableMapOf<String, UserCredentials>()
         
         doc.body.new {
             
@@ -48,11 +48,11 @@ fun main(args: Array<String>) {
                             path("/") {
                                 
                                 input(type = InputType.text, attributes = fomantic.ui.input).value = username
-                                input(type = InputType.text, attributes = fomantic.ui.input).value = password
+                                input(type = InputType.password, attributes = fomantic.ui.input).value = password
                                 
                                 button(fomantic.ui.button).text("Login").on.click {
                                     
-                                    val token = randomToken();
+                                    val token = randomToken()
                                     
                                     map[token] = UserCredentials(username.value, password.value)
                                     
@@ -90,7 +90,7 @@ fun main(args: Array<String>) {
                                                         search.value
                                                     )}"
                                                 )
-                                                if(password.value.name.contains(searchValue)) {
+                                                if(password.value.name.toLowerCase().contains(searchValue.toLowerCase())) {
                                                     
                                                     passwordRow(password, encryption)
                                                     
